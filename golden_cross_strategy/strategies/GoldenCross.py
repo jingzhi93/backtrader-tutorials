@@ -41,10 +41,10 @@ class GoldenCross(bt.Strategy):
             if self.crossover > 0:
                 amount_to_invest = (self.params.order_percentage * self.broker.cash)
                 self.size = math.floor(amount_to_invest / self.data.close)
-                # print(f"Buy {self.size} shares of {self.params.ticker} at {self.data.close[0]}")
+                print(f"BUY {self.size} shares of {self.params.ticker} at {self.data.close[0]}")
                 self.buy(size=self.size)
 
         if self.position.size > 0:
             if self.crossover < 0:
-                # print(f"Sell {self.size} shares of {self.params.ticker} at {self.data.close[0]}")
+                print(f"SELL {self.size} shares of {self.params.ticker} at {self.data.close[0]}")
                 self.close()
